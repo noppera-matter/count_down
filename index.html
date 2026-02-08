@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>사람 기억 앨범</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header>
+        <p class="eyebrow">만나는 사람들을 더 오래 기억하려면</p>
+        <h1>사람 기억 앨범</h1>
+        <p class="subtitle">
+          사람에 대한 특징을 기록하면, 묘사한 키워드가 이미지 카드로 저장되어 바로 떠올릴 수 있어요.
+        </p>
+      </header>
+
+      <main>
+        <section class="panel">
+          <h2>새로운 사람 기록</h2>
+          <form id="person-form">
+            <div class="field-grid">
+              <label>
+                이름
+                <input type="text" id="name" placeholder="예: 지연" required />
+              </label>
+              <label>
+                관계
+                <input type="text" id="relation" placeholder="예: 회사 동료" />
+              </label>
+            </div>
+            <label>
+              특징 묘사
+              <textarea
+                id="description"
+                rows="4"
+                placeholder="예: 따뜻한 미소, 파란색 니트, 향긋한 커피향"
+                required
+              ></textarea>
+            </label>
+            <label>
+              추가 메모
+              <textarea
+                id="notes"
+                rows="3"
+                placeholder="예: 첫 만남은 3월 세미나, 여행을 좋아함"
+              ></textarea>
+            </label>
+            <div class="actions">
+              <button type="button" id="generate-image">이미지 카드 미리보기</button>
+              <button type="submit" class="primary">저장하기</button>
+            </div>
+          </form>
+          <div class="preview">
+            <h3>이미지 카드 미리보기</h3>
+            <div class="preview-frame">
+              <img id="preview-image" alt="이미지 미리보기" />
+              <p id="preview-placeholder">특징 묘사를 기반으로 이미지 카드를 생성해보세요.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel list-panel">
+          <div class="panel-header">
+            <h2>기억 카드</h2>
+            <p id="count">0명 저장됨</p>
+          </div>
+          <div id="card-list" class="card-list"></div>
+          <p id="empty-state" class="empty">
+            아직 저장된 사람이 없어요. 첫 번째 사람을 추가해보세요.
+          </p>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
